@@ -4,10 +4,10 @@ using namespace std;
 struct Node {
     int roll;
     Node* next;
-    Node(int r) : roll(r), next(nullptr) {}
+    Node(int r) : roll(r), next(NULL) {}
 };
 bool exists(Node* head, int roll) {
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         if (cur->roll == roll) return true;
     }
     return false;
@@ -18,11 +18,11 @@ void addStudent(Node*& head, int roll) {
         return;
     }
     Node* fresh = new Node(roll);
-    if (head == nullptr) {
+    if (head == NULL) {
         head = fresh;
     } else {
         Node* cur = head;
-        while (cur->next != nullptr) cur = cur->next;
+        while (cur->next != NULL) cur = cur->next;
         cur->next = fresh;
     }
     cout << "Student " << roll << " enrolled.\n";
@@ -38,13 +38,13 @@ void insertAtBeginning(Node*& head, int roll) {
     cout << "Student " << roll << " joins the course.\n";
 }
 void displayStudents(Node* head) {
-    if (head == nullptr) {
+    if (head == NULL) {
         cout << "No students are enrolled.\n";
         return;
     }
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         cout << cur->roll;
-        if (cur->next != nullptr) cout << " -> ";
+        if (cur->next != NULL) cout << " -> ";
     }
     cout << "\n";
 }
@@ -53,14 +53,14 @@ void searchStudent(Node* head, int roll) {
     else cout << "Student Not Found\n";
 }
 void clearList(Node*& head) {
-    while (head != nullptr) {
+    while (head != NULL) {
         Node* temp = head;
         head = head->next;
         delete temp;
     }
 }
 int main() {
-    Node* head = nullptr;
+    Node* head = NULL;
     int choice = 0, roll;
 
     do {

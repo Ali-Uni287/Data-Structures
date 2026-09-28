@@ -4,10 +4,10 @@ using namespace std;
 struct Node {
     string productId;
     Node* next;
-    Node(const string& id) : productId(id), next(nullptr) {}
+    Node(const string& id) : productId(id), next(NULL) {}
 };
 bool exists(Node* head, const string& id) {
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         if (cur->productId == id) return true;
     }
     return false;
@@ -18,41 +18,41 @@ void addProduct(Node*& head, const string& id) {
         return;
     }
     Node* fresh = new Node(id);
-    if (head == nullptr) {
+    if (head == NULL) {
         head = fresh;
     } else {
         Node* cur = head;
-        while (cur->next != nullptr) cur = cur->next;
+        while (cur->next != NULL) cur = cur->next;
         cur->next = fresh;
     }
     cout << "Product " << id << " added to the cart.\n";
 }
 void displayCart(Node* head) {
-    if (head == nullptr) {
+    if (head == NULL) {
         cout << "The cart is empty.\n";
         return;
     }
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         cout << cur->productId;
-        if (cur->next != nullptr) cout << " -> ";
+        if (cur->next != NULL) cout << " -> ";
     }
     cout << "\n";
 }
 void removeProduct(Node*& head, const string& id) {
-    if (head == nullptr) {
+    if (head == NULL) {
         cout << "The cart is empty.\n";
         return;
     }
-    Node* target = nullptr;
+    Node* target = NULL;
     if (head->productId == id) {
         target = head;
         head = head->next;
     } else {
         Node* prev = head;
-        while (prev->next != nullptr && prev->next->productId != id) {
+        while (prev->next != NULL && prev->next->productId != id) {
             prev = prev->next;
         }
-        if (prev->next == nullptr) {
+        if (prev->next == NULL) {
             cout << "Product " << id << " was not found in the cart.\n";
             return;
         }
@@ -65,14 +65,14 @@ void removeProduct(Node*& head, const string& id) {
     displayCart(head);
 }
 void clearList(Node*& head) {
-    while (head != nullptr) {
+    while (head != NULL) {
         Node* temp = head;
         head = head->next;
         delete temp;
     }
 }
 int main() {
-    Node* head = nullptr;
+    Node* head = NULL;
     int choice = 0;
     string id;
 

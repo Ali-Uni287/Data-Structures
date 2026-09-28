@@ -4,10 +4,10 @@ using namespace std;
 struct Node {
     string id;
     Node* next;
-    Node(const string& p) : id(p), next(nullptr) {}
+    Node(const string& p) : id(p), next(NULL) {}
 };
 bool exists(Node* head, const string& id) {
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         if (cur->id == id) return true;
     }
     return false;
@@ -18,28 +18,28 @@ void addPatient(Node*& head, const string& id) {
         return;
     }
     Node* fresh = new Node(id);
-    if (head == nullptr) {
+    if (head == NULL) {
         head = fresh;
     } else {
         Node* cur = head;
-        while (cur->next != nullptr) cur = cur->next;
+        while (cur->next != NULL) cur = cur->next;
         cur->next = fresh;
     }
     cout << "Patient " << id << " added to the queue.\n";
 }
 void displayQueue(Node* head) {
-    if (head == nullptr) {
+    if (head == NULL) {
         cout << "No patients are waiting.\n";
         return;
     }
-    for (Node* cur = head; cur != nullptr; cur = cur->next) {
+    for (Node* cur = head; cur != NULL; cur = cur->next) {
         cout << cur->id;
-        if (cur->next != nullptr) cout << " -> ";
+        if (cur->next != NULL) cout << " -> ";
     }
     cout << "\n";
 }
 void servePatient(Node*& head) {
-    if (head == nullptr) {
+    if (head == NULL) {
         cout << "No patients to serve.\n";
         return;
     }
@@ -52,14 +52,14 @@ void servePatient(Node*& head) {
     displayQueue(head);
 }
 void clearList(Node*& head) {
-    while (head != nullptr) {
+    while (head != NULL) {
         Node* temp = head;
         head = head->next;
         delete temp;
     }
 }
 int main() {
-    Node* head = nullptr;
+    Node* head = NULL;
     int choice = 0;
     string id;
     do {
