@@ -10,7 +10,7 @@ public:
 
     Node(int value) {
         id = value;
-        left = right = nullptr;
+        left = right = NULL;
     }
 };
 
@@ -19,7 +19,7 @@ private:
     Node* root;
 
     Node* insert(Node* node, int id) {
-        if (node == nullptr)
+        if (node == NULL)
             return new Node(id);
 
         if (id < node->id)
@@ -31,15 +31,15 @@ private:
     }
 
     Node* findMin(Node* node) {
-        while (node != nullptr && node->left != nullptr)
+        while (node != NULL && node->left != NULL)
             node = node->left;
 
         return node;
     }
 
     Node* remove(Node* node, int id) {
-        if (node == nullptr)
-            return nullptr;
+        if (node == NULL)
+            return NULL;
 
         if (id < node->id) {
             node->left = remove(node->left, id);
@@ -49,21 +49,21 @@ private:
         }
         else {
             // Case 1: Leaf node
-            if (node->left == nullptr &&
-                node->right == nullptr) {
+            if (node->left == NULL &&
+                node->right == NULL) {
                 delete node;
-                return nullptr;
+                return NULL;
             }
 
             // Case 2: Only right child
-            if (node->left == nullptr) {
+            if (node->left == NULL) {
                 Node* temp = node->right;
                 delete node;
                 return temp;
             }
 
             // Case 2: Only left child
-            if (node->right == nullptr) {
+            if (node->right == NULL) {
                 Node* temp = node->left;
                 delete node;
                 return temp;
@@ -79,7 +79,7 @@ private:
     }
 
     void inorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         inorder(node->left);
@@ -88,7 +88,7 @@ private:
     }
 
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);
@@ -98,7 +98,7 @@ private:
 
 public:
     BST() {
-        root = nullptr;
+        root = NULL;
     }
 
     ~BST() {

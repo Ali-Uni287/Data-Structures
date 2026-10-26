@@ -10,7 +10,7 @@ public:
 
     Node(int value) {
         id = value;
-        left = right = nullptr;
+        left = right = NULL;
     }
 };
 
@@ -19,7 +19,7 @@ private:
     Node* root;
 
     Node* insert(Node* node, int id) {
-        if (node == nullptr)
+        if (node == NULL)
             return new Node(id);
 
         if (id < node->id)
@@ -31,7 +31,7 @@ private:
     }
 
     void inorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         inorder(node->left);
@@ -40,7 +40,7 @@ private:
     }
 
     void preorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         cout << node->id << " ";
@@ -49,7 +49,7 @@ private:
     }
 
     void postorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         postorder(node->left);
@@ -58,7 +58,7 @@ private:
     }
 
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);
@@ -68,7 +68,7 @@ private:
 
 public:
     BST() {
-        root = nullptr;
+        root = NULL;
     }
 
     ~BST() {

@@ -10,8 +10,8 @@ public:
 
     Node(int value) {
         id = value;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
@@ -20,7 +20,7 @@ private:
     Node* root;
 
     Node* insert(Node* node, int id) {
-        if (node == nullptr)
+        if (node == NULL)
             return new Node(id);
 
         if (id < node->id)
@@ -34,7 +34,7 @@ private:
     }
 
     bool search(Node* node, int id) {
-        if (node == nullptr)
+        if (node == NULL)
             return false;
 
         if (node->id == id)
@@ -47,15 +47,15 @@ private:
     }
 
     Node* findMin(Node* node) {
-        while (node->left != nullptr)
+        while (node->left != NULL)
             node = node->left;
 
         return node;
     }
 
     Node* remove(Node* node, int id) {
-        if (node == nullptr)
-            return nullptr;
+        if (node == NULL)
+            return NULL;
 
         if (id < node->id) {
             node->left = remove(node->left, id);
@@ -65,21 +65,21 @@ private:
         }
         else {
             // No child
-            if (node->left == nullptr &&
-                node->right == nullptr) {
+            if (node->left == NULL &&
+                node->right == NULL) {
                 delete node;
-                return nullptr;
+                return NULL;
             }
 
             // Only right child
-            if (node->left == nullptr) {
+            if (node->left == NULL) {
                 Node* temp = node->right;
                 delete node;
                 return temp;
             }
 
             // Only left child
-            if (node->right == nullptr) {
+            if (node->right == NULL) {
                 Node* temp = node->left;
                 delete node;
                 return temp;
@@ -95,7 +95,7 @@ private:
     }
 
     void inorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         inorder(node->left);
@@ -104,7 +104,7 @@ private:
     }
 
     void preorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         cout << node->id << " ";
@@ -113,7 +113,7 @@ private:
     }
 
     void postorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         postorder(node->left);
@@ -122,7 +122,7 @@ private:
     }
 
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);
@@ -132,7 +132,7 @@ private:
 
 public:
     BST() {
-        root = nullptr;
+        root = NULL;
     }
 
     ~BST() {

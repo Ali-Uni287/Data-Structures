@@ -11,8 +11,8 @@ public:
 
     Node(string n) {
         name = n;
-        left = nullptr;
-        right = nullptr;
+        left = NULL;
+        right = NULL;
     }
 };
 
@@ -21,20 +21,20 @@ private:
     Node* root;
 
     void display(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         cout << "Person: " << node->name << endl;
 
         cout << "Left child: ";
-        if (node->left != nullptr)
+        if (node->left != NULL)
             cout << node->left->name;
         else
             cout << "None";
         cout << endl;
 
         cout << "Right child: ";
-        if (node->right != nullptr)
+        if (node->right != NULL)
             cout << node->right->name;
         else
             cout << "None";
@@ -46,7 +46,7 @@ private:
 
 public:
     FamilyTree() {
-        root = nullptr;
+        root = NULL;
     }
 
     void createTree() {
@@ -72,7 +72,7 @@ public:
 
 private:
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);

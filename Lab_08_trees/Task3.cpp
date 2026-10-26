@@ -10,7 +10,7 @@ public:
 
     Node(int value) {
         id = value;
-        left = right = nullptr;
+        left = right = NULL;
     }
 };
 
@@ -19,7 +19,7 @@ private:
     Node* root;
 
     Node* insert(Node* node, int id) {
-        if (node == nullptr)
+        if (node == NULL)
             return new Node(id);
 
         if (id < node->id)
@@ -31,7 +31,7 @@ private:
     }
 
     bool search(Node* node, int id, int& comparisons) {
-        if (node == nullptr)
+        if (node == NULL)
             return false;
 
         comparisons++;
@@ -46,7 +46,7 @@ private:
     }
 
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);
@@ -56,7 +56,7 @@ private:
 
 public:
     BST() {
-        root = nullptr;
+        root = NULL;
     }
 
     ~BST() {

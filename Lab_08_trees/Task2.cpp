@@ -10,7 +10,7 @@ public:
 
     Node(int r) {
         roll = r;
-        left = right = nullptr;
+        left = right = NULL;
     }
 };
 
@@ -19,7 +19,7 @@ private:
     Node* root;
 
     Node* insert(Node* node, int roll) {
-        if (node == nullptr)
+        if (node == NULL)
             return new Node(roll);
 
         if (roll < node->roll)
@@ -34,7 +34,7 @@ private:
     }
 
     void inorder(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         inorder(node->left);
@@ -43,7 +43,7 @@ private:
     }
 
     void destroy(Node* node) {
-        if (node == nullptr)
+        if (node == NULL)
             return;
 
         destroy(node->left);
@@ -53,7 +53,7 @@ private:
 
 public:
     BST() {
-        root = nullptr;
+        root = NULL;
     }
 
     ~BST() {
